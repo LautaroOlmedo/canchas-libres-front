@@ -1,28 +1,45 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
+// Toastr annimation
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+
+// Components and
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { UserComponent } from './user/user.component';
-import { FieldComponent } from './field/field.component';
-import { TransactionComponent } from './transaction/transaction.component';
+import { LoginComponent } from './components/login/login.component';
 import { AdminComponent } from './admin/admin.component';
+import { ErrorPageComponent } from './components/error-page/error-page.component';
+import { RegisterComponent } from './components/register/register.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { UserComponent } from './components/dashboard/user/user.component';
+import { MaitenanceComponent } from './components/maitenance/maitenance.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
+    AdminComponent,
+    ErrorPageComponent,
+    RegisterComponent,
+    NavbarComponent,
+    DashboardComponent,
     UserComponent,
-    FieldComponent,
-    TransactionComponent,
-    AdminComponent
+    MaitenanceComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    CommonModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
