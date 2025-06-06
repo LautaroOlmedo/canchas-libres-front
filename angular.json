@@ -100,7 +100,17 @@
             "styles": ["src/styles.css"],
             "scripts": []
           }
-        }
+        },
+        "assets": [
+          {
+            "glob": "**/*",
+            "input": "public"
+          },
+          {
+            "glob": "**/*",
+            "input": "src/assets",
+            "output": "/assets"
+          }]
       }
     }
   },

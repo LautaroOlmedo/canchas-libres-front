@@ -2,7 +2,7 @@
   <div class="body">
     <form action="">
       <img
-        src="/Users/lautaroolmedo/NodeJS/canchitas-libres-angular/assets/diego.jpg"
+        src="diego.jpg"
         class="logo"
         alt=""
       />
@@ -10,6 +10,7 @@
       <div class="form-floating mb-3">
         <input
           type="email"
+          name="name"
           class="form-control"
           [(ngModel)]="name"
           id="floatingInput"
@@ -20,6 +21,7 @@
 
       <div class="form-floating mb-3">
         <input
+          name="lastname"
           type="email"
           class="form-control"
           [(ngModel)]="lastname"
@@ -44,6 +46,7 @@
 
       <div class="form-floating mb-3">
         <input
+          name="email"
           type="email"
           class="form-control"
           [(ngModel)]="email"
@@ -55,17 +58,7 @@
 
       <div class="form-floating mb-3">
         <input
-          type="email"
-          class="form-control"
-          [(ngModel)]="DNI"
-          id="floatingInput"
-          placeholder="name@example.com"
-        />
-        <label for="floatingInput">DNI</label>
-      </div>
-
-      <div class="form-floating mb-3">
-        <input
+          name="password"
           type="password"
           class="form-control"
           [(ngModel)]="password"
@@ -74,6 +67,20 @@
         />
         <label for="floatingPassword">Contraseña</label>
       </div>
+
+      <div class="form-floating mb-3">
+        <input
+          name="DNI"
+          type="number"
+          class="form-control"
+          [(ngModel)]="DNI"
+          id="floatingInput"
+          placeholder="name@example.com"
+        />
+        <label for="floatingInput">DNI</label>
+      </div>
+
+
 
 <!--      <div class="form-floating mb-3">-->
 <!--        <input-->
@@ -88,6 +95,7 @@
 
       <div class="form-floating mb-3">
         <input
+          name="phone"
           type="email"
           class="form-control"
           [(ngModel)]="phone"
@@ -97,7 +105,7 @@
         <label for="floatingInput">Celular</label>
       </div>
       <div class="d-grid gap-2">
-        <button class="btn btn-primary" type="button">Registrarme</button>
+        <button class="btn btn-primary" (click)="registerUser()" type="button">Registrarme</button>
       </div>
       <div>
         <p class="mt-3">

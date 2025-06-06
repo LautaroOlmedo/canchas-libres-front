@@ -1,4 +1,10 @@
 import { Component } from '@angular/core';
+import {ToastrService} from 'ngx-toastr';
+import {UserService} from '../../../services/user/user.service';
+import {Router} from '@angular/router';
+import {UserLogin} from '../../interfaces/userLogin';
+import {User} from '../../interfaces/user';
+import {UserRegister} from '../../interfaces/userRegister';
 
 @Component({
   selector: 'app-register',
@@ -7,13 +13,52 @@ import { Component } from '@angular/core';
   styleUrl: './register.component.css'
 })
 export class RegisterComponent {
-  constructor() { }
+  constructor(  private toast: ToastrService,
+                private userService: UserService,
+                private router: Router) {
 
+  }
+  // -------------------- -------------------- --------------------
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
+
+  public registerUser() {
+    if (this.name == "" || this.lastname == ""||this.email === '' || this.DNI == 0 || this.password === '' || this.phone === '') {
+      // Handle empty fields
+      this.toast.error('Todos los campos son obligatorios', 'Error');
+      return;
+    } else {
+      // Handle valid login
+      const user: UserRegister = {
+        firstName: this.name,
+        lastName: this.lastname,
+        birthday: this.birthday,
+        email: this.email,
+        password: this.password,
+        DNI: this.DNI,
+        phone: this.phone
+      };
+      console.log('user:', user);
+
+      this.userService.register(user).subscribe((data) => {
+        this.toast.success(`${this.name}`, 'Éxito');
+        this.toast.success('Registro exitoso', 'Éxito');
+        this.router.navigate(['/dashboard']);
+      }, (err) => {
+        console.log("error:", err)
+        this.toast.error(`No se pudo crear el usuario`, 'Error');
+      });
+    }
+  }
+
+
+  // -------------------- -------------------- --------------------
   public name: string = "";
   public lastname: string = "";
   public email: string = "";
   public birthday: Date = new Date();
-  public DNI: string = "";
+  public DNI: number = 0;
   public password: string = "";
   //public repeatPassword: string = "";
   public phone: string = "";
