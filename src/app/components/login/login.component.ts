@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
+import { User } from '../../interfaces/user';
+import { UserService } from '../../../services/user/user.service';
+import { Router } from '@angular/router';
+import { UserLogin } from '../../interfaces/userLogin';
 @Component({
   selector: 'app-login',
   standalone: false,
@@ -7,7 +11,11 @@ import { ToastrService } from 'ngx-toastr';
   styleUrl: './login.component.css',
 })
 export class LoginComponent implements OnInit {
-  constructor(private toast: ToastrService) {}
+  constructor(
+    private toast: ToastrService,
+    private userService: UserService,
+    private router: Router
+  ) {}
 
   // -------------------- -------------------- --------------------
   ngOnInit(): void {
@@ -21,6 +29,16 @@ export class LoginComponent implements OnInit {
       return;
     } else {
       // Handle valid login
+      const user: UserLogin = {
+        email: this.email,
+        password: this.password,
+      };
+      console.log('user:', user);
+
+      this.userService.login(user).subscribe((data) => {
+        this.toast.success(`${this.email}`, 'Éxito');
+      });
+
       this.toast.success('Login exitoso', 'Éxito');
     }
   }
