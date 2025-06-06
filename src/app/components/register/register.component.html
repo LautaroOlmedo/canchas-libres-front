@@ -11,6 +11,7 @@
         <input
           type="email"
           class="form-control"
+          [(ngModel)]="name"
           id="floatingInput"
           placeholder="name@example.com"
         />
@@ -21,6 +22,7 @@
         <input
           type="email"
           class="form-control"
+          [(ngModel)]="lastname"
           id="floatingInput"
           placeholder="name@example.com"
         />
@@ -29,18 +31,22 @@
 
       <div class="form-floating mb-3">
         <input
-          type="email"
+          type="date"
           class="form-control"
+          [(ngModel)]="birthday"
           id="floatingInput"
-          placeholder="name@example.com"
+          placeholder="Fecha de nacimiento"
+          name="birthday"
         />
         <label for="floatingInput">Fecha de nacimiento</label>
       </div>
+
 
       <div class="form-floating mb-3">
         <input
           type="email"
           class="form-control"
+          [(ngModel)]="email"
           id="floatingInput"
           placeholder="name@example.com"
         />
@@ -51,6 +57,7 @@
         <input
           type="email"
           class="form-control"
+          [(ngModel)]="DNI"
           id="floatingInput"
           placeholder="name@example.com"
         />
@@ -61,16 +68,29 @@
         <input
           type="password"
           class="form-control"
+          [(ngModel)]="password"
           id="floatingPassword"
           placeholder="Password"
         />
         <label for="floatingPassword">Contraseña</label>
       </div>
 
+<!--      <div class="form-floating mb-3">-->
+<!--        <input-->
+<!--          type="password"-->
+<!--          class="form-control"-->
+<!--          [(ngModel)]="repeatPassword"-->
+<!--          id="floatingrepeatPassword"-->
+<!--          placeholder="Password"-->
+<!--        />-->
+<!--        <label for="floatingrepeatPassword">Repetir contraseña</label>-->
+<!--      </div>-->
+
       <div class="form-floating mb-3">
         <input
           type="email"
           class="form-control"
+          [(ngModel)]="phone"
           id="floatingInput"
           placeholder="name@example.com"
         />

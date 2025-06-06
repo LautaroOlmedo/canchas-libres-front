@@ -7,5 +7,16 @@ import { Component } from '@angular/core';
   styleUrl: './register.component.css'
 })
 export class RegisterComponent {
+  constructor() { }
+
+  public name: string = "";
+  public lastname: string = "";
+  public email: string = "";
+  public birthday: Date = new Date();
+  public DNI: string = "";
+  public password: string = "";
+  //public repeatPassword: string = "";
+  public phone: string = "";
+
 
 }
