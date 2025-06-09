@@ -42,6 +42,7 @@ export class LoginComponent implements OnInit {
       this.userService.login(user).subscribe((data) => {
         this.toast.success(`Login exitoso. Bienvenido/a ${data.firstname}`, 'Éxito');
         this.authService.setEmail(this.email);
+        this.authService.setId(data.id);
         this.router.navigate(['/home']);
       }, (err: HttpErrorResponse) => {
         if(err.error.message){

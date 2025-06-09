@@ -15,7 +15,6 @@ import { AdminComponent } from './admin/admin.component';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
 import { RegisterComponent } from './components/register/register.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { MaitenanceComponent } from './components/maitenance/maitenance.component';
 import { HttpClient } from '@angular/common/http';
 
@@ -26,6 +25,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ReserveComponent } from './components/reserve/reserve.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { GenerateReserveComponent } from './components/generate-reserve/generate-reserve.component';
 
 @NgModule({
   declarations: [
@@ -35,13 +35,14 @@ import { FooterComponent } from './components/footer/footer.component';
     ErrorPageComponent,
     RegisterComponent,
     NavbarComponent,
-    DashboardComponent,
     MaitenanceComponent,
     SearchFieldComponent,
     HomeComponent,
     ReserveComponent,
     ProfileComponent,
     FooterComponent,
+
+    GenerateReserveComponent,
   ],
   imports: [
     BrowserModule,

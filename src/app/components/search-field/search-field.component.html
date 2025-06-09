@@ -42,11 +42,14 @@
   </div>
   <br><br><br>
   <div style="text-align: center">
-    <button
+
+    <a
+      class="btn btn-secondary"
+      (click)="generateReserve()"
       *ngIf="this.obtainedSpecificField?.id !== ''"
-      class="btn btn-outline-dark"
-      type="button">
-      Reservar cancha
-    </button>
+      [routerLink]="['/reserve', obtainedSpecificField.id]">
+
+      Reservar ahora
+    </a>
   </div>
 </div>

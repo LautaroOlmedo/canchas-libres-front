@@ -6,6 +6,14 @@ import { Injectable } from '@angular/core';
 export class AuthService {
   constructor() { }
   private email: string = '';
+  private id: string = '';
+
+  setId(id: string): void {
+    this.id = id;
+  }
+  getId(): string {
+    return this.id;
+  }
 
   setEmail(email: string) {
     this.email = email;

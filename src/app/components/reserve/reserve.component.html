@@ -1,1 +1,73 @@
-<p>reserve works!</p>
+<div class="containerbackground">
+  <div>
+      <app-navbar [user]="this.user"></app-navbar>
+  </div>
+  <br><br><br><br><br>
+  <div><div class="container mt-4">
+    <h2 class="mb-4 text-center">Mis Reservas</h2>
+
+    <!-- Loading State (añade una variable 'loading' en tu componente si no la tienes) -->
+    <div *ngIf="!reserves" class="text-center py-4">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Cargando...</span>
+      </div>
+      <p class="mt-2">Cargando reservas...</p>
+    </div>
+
+    <!-- Empty State -->
+    <div *ngIf="reserves && reserves.length === 0" class="alert alert-info text-center">
+      No tienes reservas registradas
+    </div>
+
+    <!-- Reservas Table -->
+    <div *ngIf="reserves && reserves.length > 0" class="table-responsive">
+      <table class="table table-hover">
+        <thead class="table-primary">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">ID Cancha</th>
+          <th scope="col">Fecha</th>
+          <th scope="col">Hora</th>
+          <th scope="col">ID Pago</th>
+          <th scope="col">Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let reserve of reserves; let i = index">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>
+            <span class="badge bg-secondary">{{ reserve.field_id | slice:0:8 }}...</span>
+          </td>
+          <td>{{ formatDate(reserve.date) }}</td>
+          <td>{{ reserve.time }}</td>
+          <td>
+            <span class="badge bg-light text-dark">{{ reserve.payment_id | slice:0:8 }}...</span>
+          </td>
+          <td>
+            <button class="btn btn-sm btn-outline-primary me-2">
+              <i class="bi bi-eye"></i> Ver
+            </button>
+            <button class="btn btn-sm btn-outline-danger">
+              <i class="bi bi-trash"></i> Cancelar
+            </button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  </div>
+  <div style="text-align: center">
+    <a></a>
+  </div>
+  <div style="text-align: center">
+
+    <a
+      class="btn btn-secondary"
+      [routerLink]="['/home',]">
+      Volver al home
+    </a>
+  </div>
+</div>
+
+

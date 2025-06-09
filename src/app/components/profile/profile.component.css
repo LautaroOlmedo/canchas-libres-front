@@ -1,12 +1,12 @@
 body{
-  background: cornflowerblue;
+  background: black;
 }
 .emp-profile{
   padding: 3%;
   margin-top: 3%;
   margin-bottom: 3%;
   border-radius: 0.5rem;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.78);
 }
 .profile-img{
   text-align: center;
@@ -92,4 +92,12 @@ body{
 .profile-tab p{
   font-weight: 600;
   color: #0062cc;
+}
+
+.containerbackground{
+  background-image: url("https://www.ole.com.ar/images/2022/12/18/JTaY5juig_1200x630__1.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
