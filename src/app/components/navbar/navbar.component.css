@@ -1,0 +1,15 @@
+.logo{
+  border-radius: 15px; /* Bordes redondos */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9); /* Sombra */
+  object-fit: cover; /* Para que no se deforme si la imagen tiene otra proporción */
+  width: 90px;
+  height: 120px;
+}
+
+.glass-effect {
+  background: transparent; /* Fondo semi-transparente */
+  backdrop-filter: blur(10px); /* Efecto de desenfoque */
+  -webkit-backdrop-filter: blur(10px); /* Soporte para Safari */
+  border: transparent; /* Borde sutil */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}

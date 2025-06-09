@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import {User} from '../../interfaces/user';
 
 @Component({
   selector: 'app-navbar',
@@ -8,4 +9,8 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
 
+  @Input({ required: true }) user!: User;
+
+  constructor() {
+  }
 }

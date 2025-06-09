@@ -6,14 +6,26 @@
 }
 
 .body {
-  margin-top: 10px;
   max-width: 300px;
   width: 100%;
   text-align: center;
 }
 
 .logo {
-  height: 300px;
-  width: 200px;
+  margin-top: 10px;
+  height: 250px;
+  width: 180px;
   margin-bottom: 10px;
+  border-radius: 15px; /* Bordes redondos */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9); /* Sombra */
+  object-fit: cover; /* Para que no se deforme si la imagen tiene otra proporción */
+}
+
+
+.fondo{
+  background-image: url("https://img.freepik.com/foto-gratis/estadio-futbol-noche_23-2151952489.jpg?semt=ais_hybrid&w=740");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }

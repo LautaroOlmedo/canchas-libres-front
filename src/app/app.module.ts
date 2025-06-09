@@ -16,12 +16,16 @@ import { ErrorPageComponent } from './components/error-page/error-page.component
 import { RegisterComponent } from './components/register/register.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { UserComponent } from './components/dashboard/user/user.component';
 import { MaitenanceComponent } from './components/maitenance/maitenance.component';
 import { HttpClient } from '@angular/common/http';
 
 // HTTP
 import { HttpClientModule } from '@angular/common/http';
+import { SearchFieldComponent } from './components/search-field/search-field.component';
+import { HomeComponent } from './components/home/home.component';
+import { ReserveComponent } from './components/reserve/reserve.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -32,8 +36,12 @@ import { HttpClientModule } from '@angular/common/http';
     RegisterComponent,
     NavbarComponent,
     DashboardComponent,
-    UserComponent,
     MaitenanceComponent,
+    SearchFieldComponent,
+    HomeComponent,
+    ReserveComponent,
+    ProfileComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

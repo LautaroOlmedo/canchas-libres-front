@@ -2,7 +2,7 @@ export interface UserRegister {
   firstName: string;
   lastName: string;
   email: string;
-  birthday: Date;
+  birthdate: Date;
   password: string;
   DNI: number;
   phone: string;

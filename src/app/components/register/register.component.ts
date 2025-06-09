@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {ToastrService} from 'ngx-toastr';
+import { HttpErrorResponse } from '@angular/common/http';
 import {UserService} from '../../../services/user/user.service';
 import {Router} from '@angular/router';
 import {UserLogin} from '../../interfaces/userLogin';
@@ -33,7 +34,7 @@ export class RegisterComponent {
       const user: UserRegister = {
         firstName: this.name,
         lastName: this.lastname,
-        birthday: this.birthday,
+        birthdate: this.birthdate,
         email: this.email,
         password: this.password,
         DNI: this.DNI,
@@ -42,12 +43,15 @@ export class RegisterComponent {
       console.log('user:', user);
 
       this.userService.register(user).subscribe((data) => {
-        this.toast.success(`${this.name}`, 'Éxito');
         this.toast.success('Registro exitoso', 'Éxito');
-        this.router.navigate(['/dashboard']);
-      }, (err) => {
-        console.log("error:", err)
-        this.toast.error(`No se pudo crear el usuario`, 'Error');
+        this.router.navigate(['/login']);
+      }, (err: HttpErrorResponse) => {
+        if(err.error.message){
+          console.log("error:", err.error.msg);
+          this.toast.warning(err.error.msg, 'Warning');
+        }else{
+          this.toast.error(`Oucrrió un error. Intente más tarde`, 'Error');
+        }
       });
     }
   }
@@ -57,7 +61,7 @@ export class RegisterComponent {
   public name: string = "";
   public lastname: string = "";
   public email: string = "";
-  public birthday: Date = new Date();
+  public birthdate: Date = new Date();
   public DNI: number = 0;
   public password: string = "";
   //public repeatPassword: string = "";

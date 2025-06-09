@@ -1,0 +1,52 @@
+<div>
+  <div class="buscador-container glass-effect rounded-pill px-4 py-3 d-flex align-items-center justify-content-between flex-wrap">
+    <!-- Elemento Agregar reserva - modificado para igualar altura -->
+    <div class="d-flex align-items-center buscador-item">
+      <a>Agregar reserva</a>
+    </div>
+    <!-- Selección de tipo de cancha -->
+    <div class="d-flex align-items-center buscador-item gap-2">
+      <label for="tipoCancha" class="mb-0" style="white-space: nowrap; min-width: 100px;">Tipo de cancha</label>
+      <select id="tipoCancha" class="form-select w-auto" [(ngModel)]="fieldType">
+        <option value="futbol 5">futbol 5</option>
+        <option value="futbol 7">futbol 7</option>
+      </select>
+    </div>
+
+    <!-- Selección de fecha -->
+    <div class="d-flex align-items-center buscador-item gap-2">
+      <i class="bi bi-calendar-event text-success me-2"></i>
+      <input type="date" class="form-control border-0 shadow-none" [(ngModel)]="selectedDate">
+    </div>
+
+    <!-- Selección de horario -->
+    <div class="d-flex align-items-center buscador-item gap-2">
+      <label for="horario" class="mb-0" style="white-space: nowrap; min-width: 100px;">Elegir horario</label>
+      <select id="horario" class="form-select w-auto" [(ngModel)]="selectedHour">
+        <option value="15">15:00hs</option>
+        <option value="16">16:00hs</option>
+        <option value="17">17:00hs</option>
+        <option value="18">18:00hs</option>
+        <option value="19">19:00hs</option>
+        <option value="20">20:00hs</option>
+        <option value="21">21:00hs</option>
+        <option value="22">22:00hs</option>
+        <option value="23">23:00hs</option>
+      </select>
+    </div>
+
+    <!-- Botón de búsqueda -->
+    <button class="btn btn-secondary rounded-pill px-4 fw-semibold" (click)="this.getSpecificField()">
+      Buscar cancha
+    </button>
+  </div>
+  <br><br><br>
+  <div style="text-align: center">
+    <button
+      *ngIf="this.obtainedSpecificField?.id !== ''"
+      class="btn btn-outline-dark"
+      type="button">
+      Reservar cancha
+    </button>
+  </div>
+</div>

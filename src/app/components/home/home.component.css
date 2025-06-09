@@ -1,8 +1,7 @@
-.fondo{
+.containerbackground{
   background-image: url("https://www.ole.com.ar/images/2022/12/18/JTaY5juig_1200x630__1.jpg");
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
-
