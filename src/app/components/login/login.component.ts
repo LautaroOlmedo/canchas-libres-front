@@ -49,7 +49,7 @@ export class LoginComponent implements OnInit {
           console.log("error:", err.error.msg);
           this.toast.warning(err.error.msg, 'Warning');
         }else{
-          this.toast.error(`Oucrrió un error. Intente más tarde`, 'Error');
+          this.toast.error(`Usuario o contraseña incorrecta`, 'Error');
         }
       });
     }
