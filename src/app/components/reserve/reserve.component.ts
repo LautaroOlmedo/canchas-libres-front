@@ -59,11 +59,13 @@ constructor(private reserveService: ReserveService, private authService: AuthSer
   formatDate(isoDate: string): string {
     const date = new Date(isoDate);
     return date.toLocaleDateString('es-ES', {
+      timeZone: 'UTC', // ⬅️ Esto mantiene la fecha sin convertirla a tu zona horaria
       day: '2-digit',
       month: '2-digit',
       year: 'numeric'
     });
   }
+
 
   public reserves: Reserve[] = []
   public user: User;
