@@ -38,7 +38,7 @@
           <td>
             <span class="badge bg-secondary">{{ reserve.field_id | slice:0:8 }}...</span>
           </td>
-          <td>{{ reserve.date }}</td>
+          <td>{{ formatDate(reserve.date) }}</td>
           <td>{{ reserve.time }}</td>
           <td>
             <span class="badge bg-light text-dark">{{ reserve.payment_id | slice:0:8 }}...</span>

@@ -84,7 +84,7 @@ export class SearchFieldComponent {
     this.reserve = {
       user_id: this.user.id,
       field_id: this.obtainedSpecificField.id,
-      date: this.getCurrentDate(),  // Fecha actual en formato YYYY-MM-DD
+      date: this.selectedDate,  // Fecha actual en formato YYYY-MM-DD
       time: this.reserveService.getReservedHour()   // Hora actual en formato HH:MM
     }
 
@@ -127,7 +127,7 @@ export class SearchFieldComponent {
 // Método para obtener la fecha actual en formato YYYY-MM-DD
   private getCurrentDate(): string {
     const today = new Date();
-    const year = today.getFullYear() + 1;
+    const year = today.getFullYear();
     const month = String(today.getMonth() + 1).padStart(2, '0'); // Meses son 0-11
     const day = String(today.getDate()).padStart(2, '0');
     return `${year}-${month}-${day}`;
